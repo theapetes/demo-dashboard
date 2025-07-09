@@ -52,6 +52,31 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				mood: {
+					positive: 'hsl(var(--mood-positive))',
+					neutral: 'hsl(var(--mood-neutral))',
+					negative: 'hsl(var(--mood-negative))'
+				},
+				sleep: {
+					good: 'hsl(var(--sleep-good))',
+					moderate: 'hsl(var(--sleep-moderate))',
+					poor: 'hsl(var(--sleep-poor))'
+				},
+				food: {
+					good: 'hsl(var(--food-good))',
+					moderate: 'hsl(var(--food-moderate))',
+					poor: 'hsl(var(--food-poor))'
+				},
+				tag: {
+					mild: 'hsl(var(--tag-mild))',
+					moderate: 'hsl(var(--tag-moderate))',
+					severe: 'hsl(var(--tag-severe))'
+				},
+				chart: {
+					line: 'hsl(var(--chart-line))',
+					fill: 'hsl(var(--chart-fill))',
+					grid: 'hsl(var(--chart-grid))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
