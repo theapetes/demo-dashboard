@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Line, LineChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
+import { Line, LineChart, ResponsiveContainer, XAxis, YAxis, CartesianGrid, ReferenceLine } from "recharts";
 
 interface MetricCardProps {
   title: string;
@@ -73,14 +73,33 @@ export const MetricCard = ({ title, value, status, type, trendData, subtitle }: 
                 tickLine={false}
                 tick={false}
               />
-              <YAxis hide />
+              <YAxis hide domain={[0, 10]} />
+              <CartesianGrid strokeDasharray="2 2" stroke="hsl(var(--border))" opacity={0.3} />
+              <ReferenceLine 
+                y={type === "mood" ? 7 : type === "sleep" ? 6 : 8} 
+                stroke="hsl(var(--chart-good))" 
+                strokeDasharray="3 3" 
+                opacity={0.6}
+              />
+              <ReferenceLine 
+                y={type === "mood" ? 4 : type === "sleep" ? 4 : 5} 
+                stroke="hsl(var(--chart-moderate))" 
+                strokeDasharray="3 3" 
+                opacity={0.6}
+              />
+              <defs>
+                <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="5%" stopColor="hsl(var(--chart-line))" stopOpacity={0.8}/>
+                  <stop offset="95%" stopColor="hsl(var(--chart-line))" stopOpacity={0.1}/>
+                </linearGradient>
+              </defs>
               <Line 
                 type="monotone" 
                 dataKey="value" 
                 stroke="hsl(var(--chart-line))"
                 strokeWidth={2}
                 dot={false}
-                fill="hsl(var(--chart-fill))"
+                fill="url(#chartGradient)"
               />
             </LineChart>
           </ResponsiveContainer>

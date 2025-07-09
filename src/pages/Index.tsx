@@ -2,6 +2,7 @@ import { MetricCard } from "@/components/MetricCard";
 import { AlertsSection } from "@/components/AlertsSection";
 import { TagsSection } from "@/components/TagsSection";
 import { LastInteractionCard } from "@/components/LastInteractionCard";
+import { EventCalendar } from "@/components/EventCalendar";
 import { Heart, User } from "lucide-react";
 
 const Index = () => {
@@ -121,9 +122,12 @@ const Index = () => {
           <p className="text-sm text-muted-foreground">
             Senior reported eating eggs this morning and is showing positive mood indicators. 
             Sleep quality has been declining slightly over the past three days due to temperature concerns. 
-            Mild confusion episodes have been noted during recent interactions.
+            Mild confusion episodes have been noted during recent interactions. Margaret confused Anne Frank with Anne Bolyn when discussing the history of the Tudors.
           </p>
         </div>
+
+        {/* Event Calendar */}
+        <EventCalendar />
       </div>
     </div>
   );

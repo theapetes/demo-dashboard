@@ -56,6 +56,9 @@ All colors MUST be HSL.
     --chart-line: 210 80% 70%;
     --chart-fill: 210 80% 90%;
     --chart-grid: 210 20% 85%;
+    --chart-good: 142 71% 45%;
+    --chart-moderate: 48 96% 53%;
+    --chart-poor: 0 84% 60%;
 
     --radius: 0.5rem;
 
