@@ -64,28 +64,34 @@ export const MetricCard = ({ title, value, status, type, trendData, subtitle }: 
             <div className="text-xs text-muted-foreground mt-1">{subtitle}</div>
           )}
         </div>
-        <div className="h-16 w-full">
+        <div className="h-24 w-full">
           <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={trendData}>
+            <LineChart data={trendData} margin={{ top: 5, right: 5, left: 5, bottom: 5 }}>
               <XAxis 
                 dataKey="day" 
                 axisLine={false}
                 tickLine={false}
                 tick={false}
               />
-              <YAxis hide domain={[0, 10]} />
+              <YAxis hide domain={[1, 10]} />
               <CartesianGrid strokeDasharray="2 2" stroke="hsl(var(--border))" opacity={0.3} />
               <ReferenceLine 
-                y={type === "mood" ? 7 : type === "sleep" ? 6 : 8} 
+                y={7.5} 
                 stroke="hsl(var(--chart-good))" 
-                strokeDasharray="3 3" 
-                opacity={0.6}
+                strokeDasharray="4 4" 
+                opacity={0.7}
               />
               <ReferenceLine 
-                y={type === "mood" ? 4 : type === "sleep" ? 4 : 5} 
+                y={5} 
                 stroke="hsl(var(--chart-moderate))" 
-                strokeDasharray="3 3" 
-                opacity={0.6}
+                strokeDasharray="4 4" 
+                opacity={0.7}
+              />
+              <ReferenceLine 
+                y={2.5} 
+                stroke="hsl(var(--chart-poor))" 
+                strokeDasharray="4 4" 
+                opacity={0.7}
               />
               <defs>
                 <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
