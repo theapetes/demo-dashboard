@@ -14,15 +14,15 @@ export const MetricCard = ({ title, value, status, type, trendData, subtitle }: 
   const getStatusColor = () => {
     if (type === "mood") {
       switch (status) {
-        case "positive": return "bg-mood-positive border-mood-positive/50";
-        case "neutral": return "bg-mood-neutral border-mood-neutral/50";
-        case "negative": return "bg-mood-negative border-mood-negative/50";
+        case "positive": return "border-mood-positive/50";
+        case "neutral": return "border-mood-neutral/50";
+        case "negative": return "border-mood-negative/50";
       }
     } else {
       switch (status) {
-        case "good": return `bg-${type}-good border-${type}-good/50`;
-        case "moderate": return `bg-${type}-moderate border-${type}-moderate/50`;
-        case "poor": return `bg-${type}-poor border-${type}-poor/50`;
+        case "good": return `border-${type}-good/50`;
+        case "moderate": return `border-${type}-moderate/50`;
+        case "poor": return `border-${type}-poor/50`;
       }
     }
   };
