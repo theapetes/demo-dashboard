@@ -58,7 +58,7 @@ export const MetricCard = ({ title, value, status, type, trendData, subtitle }: 
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-3">
-        <div>
+        <div className="h-16 flex flex-col justify-center">
           <div className="text-2xl font-bold text-foreground">{value}</div>
           {subtitle && (
             <div className="text-xs text-muted-foreground mt-1">{subtitle}</div>
